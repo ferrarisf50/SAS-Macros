@@ -1,3 +1,3 @@
 # SAS-Macros
 
-This is my SAS macros cookbook.
+This is my SAS macro cookbook.
