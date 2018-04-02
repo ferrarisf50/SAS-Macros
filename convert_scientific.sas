@@ -33,6 +33,11 @@ proc printto log = log; run;
 
 %mend;
 
+******************************************************************************************************* ;
+* 2  Auto convert scientific columns to numeric if scientific found              
+     %auto_convert_scientific(<sas table name>,<sas library name>)                                                                                     last modified: 08/11/2015;
+******************************************************************************************************* ;
+
 
 %macro auto_convert_scientific(tbl_nme,lib_nme);
 	proc sql noprint;
