@@ -6,7 +6,7 @@ options source source2 notes mprint mlogic symbolgen;
 
 
 ******************************************************************************************************* ;
-* 1 * Detect duplicate value in allotment or sample collection           last modified: 07/25/2017; * ;
+* 1 * Detect duplicate value ;
     *  Default is to detect duplicate (date,sampleid,test) for the current table;
     *  %detect_duplication( <duplicated key> , <table> )                                                                                     last modified: 08/11/2015;
     *  Require external scripts: Export_export.sas
@@ -94,12 +94,7 @@ options source source2 notes mprint mlogic symbolgen;
 		auto_d_var="&used_cols";    /*&used_cols is defined in get_var_properties.sas"*/
 		auto_d_var=prxchange('s/\b\w*result\w*\b//i', -1, auto_d_var);    /* Remove any variable associated with result */
 		*auto_d_var=prxchange('s/\bx[0-9]*\b//i', -1, auto_d_var);     /* Remove any dummy variable name like x1 x2 x3 */
-		auto_d_var=tranwrd(auto_d_var,"VALUE_DCF","");
-		auto_d_var=tranwrd(auto_d_var,"TIME_UNIT","");
-		auto_d_var=tranwrd(auto_d_var,"REF_RANGE_LOWER_N","");
-		auto_d_var=tranwrd(auto_d_var,"REF_RANGE_UPPER_N","");
-		auto_d_var=tranwrd(auto_d_var,"WEIGHT_N","");
-		auto_d_var=tranwrd(auto_d_var,"WEIGHT_UNIT","");
+
 		auto_d_var=prxchange('s/\b\w*dose\w*\b//i', -1, auto_d_var);
 
 
