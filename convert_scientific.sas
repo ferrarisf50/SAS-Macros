@@ -46,7 +46,7 @@ proc printto log = log; run;
 
 	data _null_;
 	set temp;
-	where name in('TEST_RESULT','RESULT','RESULT_N') ;     /*Add column names that needs to be converted*/ 
+	where name in() ;     /*Add column names that needs to be converted*/ 
 	call execute('%convert_scientific('||'&lib_nme,&tbl_nme,'||name||')');
 	run;
 %mend;
